@@ -1,0 +1,50 @@
+FILE 1 CONTENT
+----------------------------
+ameline.roalfe_f1
+lou.bartaloni_f1
+sheelah.banks_f1
+bernie.willis_f1
+vance.siward_f1
+lucita.roath_f1
+ailbert.cohani_f1
+candy.gaylard_f1
+sutherlan.pheasant_f1
+
+FILE 2 CONTENT
+----------------------------
+cleopatra.harrisson_f2
+lou.bartaloni_f1
+ram.bickardike_f2
+sheelah.banks_f1
+bernie.willis_f1
+lucita.roath_f1
+anastasia.mattiacci_f2
+ailbert.cohani_f1
+candy.gaylard_f1
+clerissa.geaves_f2
+isac.vigne_f2
+alard.shefton_f2
+
+CASE 1 -  WHAT WE HAVE IN FILE 1 AND IN FILE 2
+$grep -f file1.txt file2.txt
+lou.bartaloni_f1
+sheelah.banks_f1
+bernie.willis_f1
+lucita.roath_f1
+ailbert.cohani_f1
+candy.gaylard_f1
+
+CASE 2 - WHAT WE DONT HAVE IN FILE 1 BUT IN FILE 2
+$grep -vf file1.txt file2.txt
+Cleopatra.Harrisson_f2
+Ram.Bickardike_f2
+Anastasia.Mattiacci_f2
+Clerissa.Geaves_f2
+Isac.Vigne_f2
+Alard.Shefton_f2
+
+CASE 3 - WHAT WE DONT HAVE IN FILE 2 BUT IN FILE 1
+$grep -vf file2txt file1.txt
+ameline.roalfe_f1
+vance.siward_f1
+sutherlan.pheasant_f1
