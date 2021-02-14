@@ -5,18 +5,18 @@
 #: Created Date:    14/02/2021
 #: Modified Date:   14/02/2021
 #: Author:          "Ulisses O. F. Silva" <uofs.br@gmail.com>
-#: Version:         1.0
+#: Version:         1.1
 #: Options:         None
 #START\#
 port=80
 
 main() {
-mybeRadio 
+mybeRadio $1
 }
 
 mybeRadio(){
 		firefox --new-window
-		for i in $(fping -d -a -q -g -i 1 -r 0 $1) ; do
+		for i in $(/usr/bin/fping -d -a -q -g -i 1 -r 0 $1 | sort) ; do
 				firefox --new-tab https://$i:$port
 		done
 }
